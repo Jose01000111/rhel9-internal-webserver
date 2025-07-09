@@ -14,135 +14,99 @@ Each phase of this project is designed to reflect foundational objectives from t
 
 The goal is to ensure that the development team has a stable, secure, and functional internal web platform while maintaining best practices in Linux system administration.
 
-
 ---
 
 ## 📌 Phase 1: Initial Setup and User Management
 
-🗓️ **Context**:  
-Onboarding as a new sysadmin, I started by setting up the system and creating accounts for our development team.
+🗓️ **Summary**:  
+I began by installing RHEL 9 on the server, configuring essential system settings like hostname and timezone to fit our company standards. After updating the system to the latest packages, I created three user accounts (`devalpha`, `devbeta`, and `devadmin`) tailored for the development team. To streamline permissions management, I created a group called `developers` and added all these users to it. Finally, I secured administrative privileges by configuring `devadmin` with passwordless sudo access through a dedicated sudoers configuration file.
 
-🔸 I installed RHEL 9 and configured the hostname, timezone, and installed all system updates.  
-🔸 I created three user accounts: `devalpha`, `devbeta`, and `devadmin`.  
-🔸 I created a new group called `developers` and added all three users to it.  
-🔸 I granted `devadmin` passwordless sudo privileges using a rule in `/etc/sudoers.d/devadmin`.
-
-📸 **Deliverables**:
-- Screenshot of `/etc/passwd`
-- Output of `id devalpha`
-- Output of `sudo -l -U devadmin`
+📸 **Deliverables**:  
+🔸 Screenshot of `/etc/passwd`  
+🔸 Output of `id devalpha`  
+🔸 Output of `sudo -l -U devadmin`
 
 ---
 
 ## 📌 Phase 2: Directory and Permission Configuration
 
-🗓️ **Context**:  
-With users ready, I prepared a structured directory for the development web environment.
+🗓️ **Summary**:  
+With the users set up, I focused on building a clear directory structure under `/opt/devweb` to organize our web application files and support directories. I created subfolders for configuration files, logs, scripts, and HTML content. To facilitate collaborative work, I assigned group ownership of these directories to the `developers` group. Setting the SGID bit on the `scripts` directory ensured that all new files automatically inherit the group ownership, maintaining consistent access controls.
 
-🔸 I created the directory `/opt/devweb` with subdirectories: `config`, `logs`, `scripts`, and `html`.  
-🔸 I assigned group ownership of the entire `/opt/devweb` structure to the `developers` group.  
-🔸 I set the SGID (Set Group ID) bit on `/opt/devweb/scripts` so that new files inherit group ownership.
-
-📸 **Deliverables**:
-- Output of `ls -lR /opt/devweb`
-- Commands used for `chmod` and `chgrp`
+📸 **Deliverables**:  
+🔸 Output of `ls -lR /opt/devweb`  
+🔸 Commands used for `chmod` and `chgrp`
 
 ---
 
 ## 📌 Phase 3: Apache Installation and Configuration
 
-🗓️ **Context**:  
-I deployed Apache to host the development website internally.
+🗓️ **Summary**:  
+I installed the Apache HTTP server using the system’s package manager, then enabled and started its service to run on system boot. To serve the internal website, I created a simple `index.html` file in the `/opt/devweb/html` directory. I modified the Apache configuration to update the `DocumentRoot` to this new directory. Because SELinux is enforcing on the system, I configured the appropriate SELinux file contexts and applied them to the web directory. Lastly, I opened port 80 on the firewall to allow HTTP traffic.
 
-🔸 I installed the Apache web server using `dnf install -y httpd`.  
-🔸 I enabled and started the Apache service with `systemctl enable --now httpd`.  
-🔸 I created a simple `index.html` file inside `/opt/devweb/html`.  
-🔸 I updated the `DocumentRoot` in `/etc/httpd/conf/httpd.conf` to point to `/opt/devweb/html`.  
-🔸 I applied the correct SELinux file contexts using `semanage` and `restorecon`.  
-🔸 I allowed HTTP traffic by opening port 80 using the firewall and reloaded the rules.
-
-📸 **Deliverables**:
-- Snippet of updated `httpd.conf` showing the new DocumentRoot
-- Output of `ls -Z /opt/devweb/html` with SELinux contexts
-- Output of `firewall-cmd --list-all`
+📸 **Deliverables**:  
+🔸 Snippet of updated `httpd.conf` showing the new DocumentRoot  
+🔸 Output of `ls -Z /opt/devweb/html` with SELinux contexts  
+🔸 Output of `firewall-cmd --list-all`
 
 ---
 
 ## 📌 Phase 4: Scheduled Maintenance and Backup Automation
 
-🗓️ **Context**:  
-To ensure backups and scheduled tasks are functional, I implemented automation scripts and job scheduling.
+🗓️ **Summary**:  
+To protect our web data, I developed a backup script that copies the website content to a backup directory with a timestamp for versioning. I scheduled this backup to run automatically every day at 1 AM using `crontab` under the `devadmin` user account. Additionally, I tested the scheduling system by creating a one-time `at` job to reboot the server after a 10-minute delay.
 
-🔸 I wrote a backup script `/opt/devweb/scripts/backup.sh` to copy `/opt/devweb/html` into `/opt/backup/` with a timestamp.  
-🔸 I scheduled the script to run daily at 1 AM using `crontab` for the `devadmin` user.  
-🔸 I created a one-time reboot job using the `at` command, scheduled to occur 10 minutes later.
-
-📸 **Deliverables**:
-- Output of `crontab -l -u devadmin`
-- Contents of `backup.sh` script
-- Output of `atq`
+📸 **Deliverables**:  
+🔸 Output of `crontab -l -u devadmin`  
+🔸 Contents of `backup.sh` script  
+🔸 Output of `atq`
 
 ---
 
 ## 📌 Phase 5: Networking Configuration
 
-🗓️ **Context**:  
-I configured the server to use a static IP address and verified its connectivity.
+🗓️ **Summary**:  
+I configured the server’s primary network interface (`eth0`) to use a static IP address (`192.168.1.100/24`) and set the DNS resolver to Google’s public DNS (`8.8.8.8`) using NetworkManager’s CLI tools. To verify the network settings, I inspected the IP address assignment, checked active connections, tested connectivity to external hosts with `ping`, and confirmed local web access using `curl`.
 
-🔸 I configured `eth0` with the static IP address `192.168.1.100/24` using `nmcli`.  
-🔸 I set the DNS server to `8.8.8.8` in the same interface configuration.  
-🔸 I verified the changes using `ip a`, tested DNS resolution with `ping`, and used `curl` to test local web access.
-
-📸 **Deliverables**:
-- Output of `ip a`
-- Output of `nmcli con show`
-- Contents of `/etc/hosts`
-- Contents of `/etc/resolv.conf`
+📸 **Deliverables**:  
+🔸 Output of `ip a`  
+🔸 Output of `nmcli con show`  
+🔸 Contents of `/etc/hosts`  
+🔸 Contents of `/etc/resolv.conf`
 
 ---
 
 ## 📌 Phase 6: Archiving and Logs
 
-🗓️ **Context**:  
-For log storage and cleanup, I implemented archiving and automatic log pruning.
+🗓️ **Summary**:  
+I archived the accumulated web server logs into a compressed tarball stored in `/tmp` for easier management and transfer. To prevent log accumulation from filling disk space, I set up a monthly cron job using the `find` command to delete log files older than 30 days, automating log maintenance.
 
-🔸 I compressed the `/opt/devweb/logs` directory into `/tmp/devlogs.tar.gz` using `tar`.  
-🔸 I scheduled a monthly cron job using `find` to delete log files older than 30 days.
-
-📸 **Deliverables**:
-- Output of `tar -tzf /tmp/devlogs.tar.gz`
-- Cron job configuration
-- `find` command used for cleanup
+📸 **Deliverables**:  
+🔸 Output of `tar -tzf /tmp/devlogs.tar.gz`  
+🔸 Cron job configuration  
+🔸 `find` command used for cleanup
 
 ---
 
 ## 📌 Phase 7: SELinux and Service Management
 
-🗓️ **Context**:  
-I ensured SELinux was configured properly for persistent, secure web service access.
+🗓️ **Summary**:  
+SELinux enforcement was confirmed to be active, requiring that I configure appropriate security contexts for the custom web directory. Using `semanage fcontext`, I labeled `/opt/devweb/html` so Apache could access it without issues, and applied these labels with `restorecon`. To ensure the web server is always running after reboot, I enabled the `httpd` service to start on boot.
 
-🔸 I verified SELinux was in enforcing mode using `getenforce`.  
-🔸 I added a rule with `semanage fcontext` to label `/opt/devweb/html` with the correct context for Apache access.  
-🔸 I applied the SELinux labels using `restorecon`.  
-🔸 I ensured Apache is enabled to start on boot using `systemctl enable httpd`.
-
-📸 **Deliverables**:
-- Output of `getenforce`
-- Output of `semanage fcontext` rule
-- Output of `restorecon -Rv /opt/devweb/html`
+📸 **Deliverables**:  
+🔸 Output of `getenforce`  
+🔸 Output of `semanage fcontext` rule  
+🔸 Output of `restorecon -Rv /opt/devweb/html`
 
 ---
 
 ## 📌 Phase 8: Troubleshooting and Logs
 
-🗓️ **Context**:  
-I simulated a service failure and practiced recovery techniques to build troubleshooting confidence.
+🗓️ **Summary**:  
+To prepare for real-world failures, I intentionally stopped the Apache service and examined the resulting error logs using both `journalctl` and the Apache error log file. I monitored running processes with `top` and `ps` and practiced terminating a stuck process using `kill -9` to ensure system stability and responsiveness.
 
-🔸 I stopped Apache using `systemctl stop httpd` to simulate a failure.  
-🔸 I viewed system logs using `journalctl -xe` and `/var/log/httpd/error_log` to identify the issue.  
-🔸 I used `top` and `ps` to monitor processes and used `kill -9` to terminate a stuck process manually.
+📸 **Deliverables**:  
+🔸 Screenshot or logs of the Apache error  
+🔸 Output showing use of `top`, `ps`, and `kill`  
+🔸 Recovery steps and resolutions
 
-📸 **Deliverables**:
-- Screenshot or logs of the Apache error
-- Output showing use of `top`, `ps`, and `kill`
-- Recovery steps and resolutions
