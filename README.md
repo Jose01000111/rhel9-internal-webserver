@@ -6,6 +6,17 @@
 
 ---
 
+## 🧾 Introduction
+
+As a junior system administrator at **DevCore Solutions**, I have been tasked with designing, deploying, and managing a secure internal web server environment using **Red Hat Enterprise Linux 9 (RHEL 9)**. This project simulates real-world sysadmin responsibilities by walking through critical phases such as system setup, user and group management, web server configuration, security enforcement with SELinux, task automation, log handling, and network configuration.
+
+Each phase of this project is designed to reflect foundational objectives from the **RH124 course**, helping reinforce core Linux administration skills through practical application. All tasks have been executed in a structured, documented, and security-conscious manner to simulate production-like standards.
+
+The goal is to ensure that the development team has a stable, secure, and functional internal web platform while maintaining best practices in Linux system administration.
+
+
+---
+
 ## 📌 Phase 1: Initial Setup and User Management
 
 🗓️ **Context**:  
