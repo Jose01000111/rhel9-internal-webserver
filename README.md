@@ -4,22 +4,19 @@
 🏢 **Company**: DevCore Solutions  
 📦 **Environment**: Red Hat Enterprise Linux 9
 
----
-
 ## 🧾 Introduction
 
 As a junior system administrator at **DevCore Solutions**, I have been tasked with designing, deploying, and managing a secure internal web server environment using **Red Hat Enterprise Linux 9 (RHEL 9)**. This project simulates real-world sysadmin responsibilities by walking through critical phases such as system setup, user and group management, web server configuration, security enforcement with SELinux, task automation, log handling, and network configuration.
 
-Each phase of this project is designed to reflect foundational objectives from the **Altostratus Technologies Course**, helping reinforce core Linux administration skills through practical application. All tasks have been executed in a structured, documented, and security-conscious manner to simulate production-like standards.
-
-The goal is to ensure that the development team has a stable, secure, and functional internal web platform while maintaining best practices in Linux system administration.
-
 ---
-
-## 📌 Phase 1: Initial Setup and User Management
+<div style="border:1px solid #FFA500; padding:15px; border-radius:8px; margin-bottom:20px;">
+  
+##  📌 Phase 1: Initial Setup and User Management 
 
 🗓️ **Summary**:  
 I began by installing RHEL 9 on the server, configuring essential system settings like hostname and timezone to fit our company standards. After updating the system to the latest packages, I created three user accounts (`devalpha`, `devbeta`, and `devadmin`) tailored for the development team. To streamline permissions management, I created a group called `developers` and added all these users to it. Finally, I secured administrative privileges by configuring `devadmin` with passwordless sudo access through a dedicated sudoers configuration file.
+
+</div>
 
 📸 **Deliverables**:  
 🔸 Screenshot of `/etc/passwd`  
