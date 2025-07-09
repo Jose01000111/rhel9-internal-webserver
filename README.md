@@ -10,7 +10,7 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 
 ---
 
-<div style="border:1px solid #FFA500; padding:15px; border-radius:8px; margin-bottom:20px;">
+<div style="border:1px solid #FFA500; padding:10px; border-radius:5px; margin-bottom:15px;">
   
 ##  📌 Phase 1: Initial Setup and User Management 
 
