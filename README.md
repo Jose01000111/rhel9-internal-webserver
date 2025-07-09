@@ -11,8 +11,9 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
   
 ##  📌 Phase 1: Initial Setup and User Management 
 
-🗓️ **Summary**:  
-I began by installing RHEL 9 on the server, configuring essential system settings like hostname and timezone to fit our company standards. After updating the system to the latest packages, I created three user accounts (`devalpha`, `devbeta`, and `devadmin`) tailored for the development team. To streamline permissions management, I created a group called `developers` and added all these users to it. Finally, I secured administrative privileges by configuring `devadmin` with passwordless sudo access through a dedicated sudoers configuration file.
+|🗓️ **Summary**:  |
+|------|
+|I began by installing RHEL 9 on the server, configuring essential system settings like hostname and timezone to fit our company standards. After updating the system to the latest packages, I created three user accounts (`devalpha`, `devbeta`, and `devadmin`) tailored for the development team. To streamline permissions management, I created a group called `developers` and added all these users to it. Finally, I secured administrative privileges by configuring `devadmin` with passwordless sudo access through a dedicated sudoers configuration file. |
 
 📸 **Deliverables**:  
 🔸 Screenshot of `/etc/passwd`  
