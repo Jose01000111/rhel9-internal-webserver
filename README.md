@@ -89,3 +89,50 @@ To prepare for real-world failures, I intentionally stopped the Apache service a
 🔸 Output showing use of `top`, `ps`, and `kill`  
 🔸 Recovery steps and resolutions
 
+## 🛠️ Technologies Used
+
+<div style="display: flex; flex-direction: column; gap: 15px; max-width: 600px;">
+
+  <div style="border: 2px solid #FFA500; border-radius: 8px; padding: 12px; background-color: #fff8e1;">
+    <strong>Red Hat Enterprise Linux 9 (RHEL 9)</strong><br>
+    Operating system for the server environment.
+  </div>
+
+  <div style="border: 2px solid #FFA500; border-radius: 8px; padding: 12px; background-color: #fff8e1;">
+    <strong>Apache HTTP Server (httpd)</strong><br>
+    Web server software for hosting the internal website.
+  </div>
+
+  <div style="border: 2px solid #FFA500; border-radius: 8px; padding: 12px; background-color: #fff8e1;">
+    <strong>Bash Shell Scripting</strong><br>
+    Used for automation and backup scripts.
+  </div>
+
+  <div style="border: 2px solid #FFA500; border-radius: 8px; padding: 12px; background-color: #fff8e1;">
+    <strong>SELinux</strong><br>
+    Security module enforcing access controls.
+  </div>
+
+  <div style="border: 2px solid #FFA500; border-radius: 8px; padding: 12px; background-color: #fff8e1;">
+    <strong>firewalld</strong><br>
+    Firewall management tool to control network traffic.
+  </div>
+
+  <div style="border: 2px solid #FFA500; border-radius: 8px; padding: 12px; background-color: #fff8e1;">
+    <strong>NetworkManager (nmcli)</strong><br>
+    CLI tool for network configuration.
+  </div>
+
+  <div style="border: 2px solid #FFA500; border-radius: 8px; padding: 12px; background-color: #fff8e1;">
+    <strong>Cron & At</strong><br>
+    Job scheduling utilities for automation.
+  </div>
+
+  <div style="border: 2px solid #FFA500; border-radius: 8px; padding: 12px; background-color: #fff8e1;">
+    <strong>Git & GitHub</strong><br>
+    Version control and repository hosting.
+  </div>
+
+</div>
+
+
