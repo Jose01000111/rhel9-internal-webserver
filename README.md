@@ -8,8 +8,6 @@
 
 As a junior system administrator at **DevCore Solutions**, I have been tasked with designing, deploying, and managing a secure internal web server environment using **Red Hat Enterprise Linux 9 (RHEL 9)**. This project simulates real-world sysadmin responsibilities by walking through critical phases such as system setup, user and group management, web server configuration, security enforcement with SELinux, task automation, log handling, and network configuration.
 
----
-
 | 📌 **Phase 1: Initial Setup and User Management**  |
 |----------------------------------------------------|
 | I began by installing RHEL 9 on the server, configuring essential system settings like hostname and timezone to fit our company standards. After updating the system to the latest packages, I created three user accounts (`devalpha`, `devbeta`, and `devadmin`) tailored for the development team. To streamline permissions management, I created a group called `developers` and added all these users to it. Finally, I secured administrative privileges by configuring `devadmin` with passwordless sudo access through a dedicated sudoers configuration file. |
@@ -19,7 +17,6 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 🟠 Output of `id devalpha`  
 🟠 Output of `sudo -l -U devadmin`
 
----
 
 | 📌 **Phase 2: Directory and Permission Configuration**  |
 |----------------------------------------------------------|
@@ -29,7 +26,6 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 🟠 Output of `ls -lR /opt/devweb`  
 🟠 Commands used for `chmod` and `chgrp`
 
----
 
 | 📌 **Phase 3: Apache Installation and Configuration**  |
 |---------------------------------------------------------|
@@ -40,7 +36,6 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 🟠 Output of `ls -Z /opt/devweb/html` with SELinux contexts  
 🟠 Output of `firewall-cmd --list-all`
 
----
 
 | 📌 **Phase 4: Scheduled Maintenance and Backup Automation**  |
 |--------------------------------------------------------------|
@@ -51,7 +46,6 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 🟠 Contents of `backup.sh` script  
 🟠 Output of `atq`
 
----
 
 | 📌 **Phase 5: Networking Configuration**  |
 |------------------------------------------|
@@ -63,7 +57,6 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 🟠 Contents of `/etc/hosts`  
 🟠 Contents of `/etc/resolv.conf`
 
----
 
 | 📌 **Phase 6: Archiving and Logs**  |
 |------------------------------------|
@@ -74,7 +67,6 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 🟠 Cron job configuration  
 🟠 `find` command used for cleanup
 
----
 
 | 📌 **Phase 7: SELinux and Service Management**  |
 |-------------------------------------------------|
@@ -85,7 +77,6 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 🟠 Output of `semanage fcontext` rule  
 🟠 Output of `restorecon -Rv /opt/devweb/html`
 
----
 
 | 📌 **Phase 8: Troubleshooting and Logs**  |
 |------------------------------------------|
@@ -96,7 +87,6 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 🟠 Output showing use of `top`, `ps`, and `kill`  
 🟠 Recovery steps and resolutions
 
----
 
 ## 🛠️ Technologies Used
 
