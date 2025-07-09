@@ -26,8 +26,6 @@ I began by installing RHEL 9 on the server, configuring essential system setting
 🔸 Output of `id devalpha`  
 🔸 Output of `sudo -l -U devadmin`
 
----
-
 ## 📌 Phase 2: Directory and Permission Configuration
 
 🗓️ **Summary**:  
@@ -36,8 +34,6 @@ With the users set up, I focused on building a clear directory structure under `
 📸 **Deliverables**:  
 🔸 Output of `ls -lR /opt/devweb`  
 🔸 Commands used for `chmod` and `chgrp`
-
----
 
 ## 📌 Phase 3: Apache Installation and Configuration
 
@@ -49,8 +45,6 @@ I installed the Apache HTTP server using the system’s package manager, then en
 🔸 Output of `ls -Z /opt/devweb/html` with SELinux contexts  
 🔸 Output of `firewall-cmd --list-all`
 
----
-
 ## 📌 Phase 4: Scheduled Maintenance and Backup Automation
 
 🗓️ **Summary**:  
@@ -60,8 +54,6 @@ To protect our web data, I developed a backup script that copies the website con
 🔸 Output of `crontab -l -u devadmin`  
 🔸 Contents of `backup.sh` script  
 🔸 Output of `atq`
-
----
 
 ## 📌 Phase 5: Networking Configuration
 
@@ -74,8 +66,6 @@ I configured the server’s primary network interface (`eth0`) to use a static I
 🔸 Contents of `/etc/hosts`  
 🔸 Contents of `/etc/resolv.conf`
 
----
-
 ## 📌 Phase 6: Archiving and Logs
 
 🗓️ **Summary**:  
@@ -86,8 +76,6 @@ I archived the accumulated web server logs into a compressed tarball stored in `
 🔸 Cron job configuration  
 🔸 `find` command used for cleanup
 
----
-
 ## 📌 Phase 7: SELinux and Service Management
 
 🗓️ **Summary**:  
@@ -97,8 +85,6 @@ SELinux enforcement was confirmed to be active, requiring that I configure appro
 🔸 Output of `getenforce`  
 🔸 Output of `semanage fcontext` rule  
 🔸 Output of `restorecon -Rv /opt/devweb/html`
-
----
 
 ## 📌 Phase 8: Troubleshooting and Logs
 
