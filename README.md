@@ -15,7 +15,7 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I create the users and the developers group, then add the users to the group.  
 ### 🛠️ I give devadmin sudo access.
 
-📸 **Deliverables**:  
+# 📸 **Deliverables**:  
 🟠 Screenshot of `/etc/passwd`  
 🟠 Output of `id devalpha`  
 🟠 Output of `sudo -l -U devadmin`
@@ -29,7 +29,7 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I assign group ownership to the developers group.  
 ### 🛠️ I set the SGID bit on the `scripts` directory so new files inherit the group.
 
-📸 **Deliverables**:  
+# 📸 **Deliverables**:  
 🟠 Output of `ls -lR /opt/devweb`  
 🟠 Commands used for `chmod` and `chgrp`
 
@@ -44,7 +44,7 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I update the SELinux context for the new DocumentRoot.  
 ### 🛠️ I open port 80 in the firewall.
 
-📸 **Deliverables**:  
+# 📸 **Deliverables**:  
 🟠 Snippet of updated `httpd.conf` showing the new DocumentRoot  
 🟠 Output of `ls -Z /opt/devweb/html` with SELinux contexts  
 🟠 Output of `firewall-cmd --list-all`
@@ -58,7 +58,7 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I schedule the backup script to run daily as the `devadmin` user.  
 ### 🛠️ I schedule a reboot to occur in 10 minutes using an at job.
 
-📸 **Deliverables**:  
+# 📸 **Deliverables**:  
 🟠 Output of `crontab -l -u devadmin`  
 🟠 Contents of `backup.sh` script  
 🟠 Output of `atq`
@@ -71,7 +71,7 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I assign a static IP address and set DNS for the network interface.  
 ### 🛠️ I verify network connectivity and web service availability.
 
-📸 **Deliverables**:  
+# 📸 **Deliverables**:  
 🟠 Output of `ip a`  
 🟠 Output of `nmcli con show`  
 🟠 Contents of `/etc/hosts`  
@@ -85,7 +85,7 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I archive the logs directory into a compressed tarball.  
 ### 🛠️ I schedule a monthly cleanup to delete logs older than 30 days.
 
-📸 **Deliverables**:  
+# 📸 **Deliverables**:  
 🟠 Output of `tar -tzf /tmp/devlogs.tar.gz`  
 🟠 Cron job configuration  
 🟠 `find` command used for cleanup
@@ -99,7 +99,7 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I add SELinux rules to allow Apache to access the new DocumentRoot and restore contexts.  
 ### 🛠️ I restart Apache and enable it to start on boot.
 
-📸 **Deliverables**:  
+# 📸 **Deliverables**:  
 🟠 Output of `getenforce`  
 🟠 Output of `semanage fcontext` rule  
 🟠 Output of `restorecon -Rv /opt/devweb/html`
@@ -113,7 +113,7 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I review logs to diagnose the problem.  
 ### 🛠️ I use system tools to find and kill any stuck processes.
 
-📸 **Deliverables**:  
+# 📸 **Deliverables**:  
 🟠 Screenshot or logs of the Apache error  
 🟠 Output showing use of `top`, `ps`, and `kill`  
 🟠 Recovery steps and resolutions
