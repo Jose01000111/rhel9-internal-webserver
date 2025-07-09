@@ -11,6 +11,10 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 |----------------------------------------------------|
 | I began by installing RHEL 9 on the server, configuring essential system settings like hostname and timezone to fit our company standards. After updating the system to the latest packages, I created three user accounts (`devalpha`, `devbeta`, and `devadmin`) tailored for the development team. To streamline permissions management, I created a group called `developers` and added all these users to it. Finally, I secured administrative privileges by configuring `devadmin` with passwordless sudo access through a dedicated sudoers configuration file. |
 
+### 🛠️ I set the hostname, timezone, and update the system.  
+### 🛠️ I create the users and the developers group, then add the users to the group.  
+### 🛠️ I give devadmin sudo access.
+
 📸 **Deliverables**:  
 🟠 Screenshot of `/etc/passwd`  
 🟠 Output of `id devalpha`  
@@ -21,6 +25,10 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 |----------------------------------------------------------|
 | With the users set up, I focused on building a clear directory structure under `/opt/devweb` to organize our web application files and support directories. I created subfolders for configuration files, logs, scripts, and HTML content. To facilitate collaborative work, I assigned group ownership of these directories to the `developers` group. Setting the SGID bit on the `scripts` directory ensured that all new files automatically inherit the group ownership, maintaining consistent access controls. |
 
+### 🛠️ I create the directory structure under `/opt/devweb`.  
+### 🛠️ I assign group ownership to the developers group.  
+### 🛠️ I set the SGID bit on the `scripts` directory so new files inherit the group.
+
 📸 **Deliverables**:  
 🟠 Output of `ls -lR /opt/devweb`  
 🟠 Commands used for `chmod` and `chgrp`
@@ -29,6 +37,12 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 | 📌 **Phase 3: Apache Installation and Configuration**  |
 |---------------------------------------------------------|
 | I installed the Apache HTTP server using the system’s package manager, then enabled and started its service to run on system boot. To serve the internal website, I created a simple `index.html` file in the `/opt/devweb/html` directory. I modified the Apache configuration to update the `DocumentRoot` to this new directory. Because SELinux is enforcing on the system, I configured the appropriate SELinux file contexts and applied them to the web directory. Lastly, I opened port 80 on the firewall to allow HTTP traffic. |
+
+### 🛠️ I install and start the Apache web server.  
+### 🛠️ I add a sample webpage to the `html` directory.  
+### 🛠️ I update Apache’s DocumentRoot to point to the new `html` directory.  
+### 🛠️ I update the SELinux context for the new DocumentRoot.  
+### 🛠️ I open port 80 in the firewall.
 
 📸 **Deliverables**:  
 🟠 Snippet of updated `httpd.conf` showing the new DocumentRoot  
@@ -40,6 +54,10 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 |--------------------------------------------------------------|
 | To protect our web data, I developed a backup script that copies the website content to a backup directory with a timestamp for versioning. I scheduled this backup to run automatically every day at 1 AM using `crontab` under the `devadmin` user account. Additionally, I tested the scheduling system by creating a one-time `at` job to reboot the server after a 10-minute delay. |
 
+### 🛠️ I create a backup script that copies the `html` directory with a date stamp.  
+### 🛠️ I schedule the backup script to run daily as the `devadmin` user.  
+### 🛠️ I schedule a reboot to occur in 10 minutes using an at job.
+
 📸 **Deliverables**:  
 🟠 Output of `crontab -l -u devadmin`  
 🟠 Contents of `backup.sh` script  
@@ -49,6 +67,9 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 | 📌 **Phase 5: Networking Configuration**  |
 |------------------------------------------|
 | I configured the server’s primary network interface (`eth0`) to use a static IP address (`192.168.1.100/24`) and set the DNS resolver to Google’s public DNS (`8.8.8.8`) using NetworkManager’s CLI tools. To verify the network settings, I inspected the IP address assignment, checked active connections, tested connectivity to external hosts with `ping`, and confirmed local web access using `curl`. |
+
+### 🛠️ I assign a static IP address and set DNS for the network interface.  
+### 🛠️ I verify network connectivity and web service availability.
 
 📸 **Deliverables**:  
 🟠 Output of `ip a`  
@@ -61,6 +82,9 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 |------------------------------------|
 | I archived the accumulated web server logs into a compressed tarball stored in `/tmp` for easier management and transfer. To prevent log accumulation from filling disk space, I set up a monthly cron job using the `find` command to delete log files older than 30 days, automating log maintenance. |
 
+### 🛠️ I archive the logs directory into a compressed tarball.  
+### 🛠️ I schedule a monthly cleanup to delete logs older than 30 days.
+
 📸 **Deliverables**:  
 🟠 Output of `tar -tzf /tmp/devlogs.tar.gz`  
 🟠 Cron job configuration  
@@ -71,6 +95,10 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 |-------------------------------------------------|
 | SELinux enforcement was confirmed to be active, requiring that I configure appropriate security contexts for the custom web directory. Using `semanage fcontext`, I labeled `/opt/devweb/html` so Apache could access it without issues, and applied these labels with `restorecon`. To ensure the web server is always running after reboot, I enabled the `httpd` service to start on boot. |
 
+### 🛠️ I check that SELinux is enabled and enforcing.  
+### 🛠️ I add SELinux rules to allow Apache to access the new DocumentRoot and restore contexts.  
+### 🛠️ I restart Apache and enable it to start on boot.
+
 📸 **Deliverables**:  
 🟠 Output of `getenforce`  
 🟠 Output of `semanage fcontext` rule  
@@ -80,6 +108,10 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 | 📌 **Phase 8: Troubleshooting and Logs**  |
 |------------------------------------------|
 | To prepare for real-world failures, I intentionally stopped the Apache service and examined the resulting error logs using both `journalctl` and the Apache error log file. I monitored running processes with `top` and `ps` and practiced terminating a stuck process using `kill -9` to ensure system stability and responsiveness. |
+
+### 🛠️ I simulate a failure by stopping the Apache service.  
+### 🛠️ I review logs to diagnose the problem.  
+### 🛠️ I use system tools to find and kill any stuck processes.
 
 📸 **Deliverables**:  
 🟠 Screenshot or logs of the Apache error  
