@@ -23,7 +23,7 @@
 ### 🟠 Output of `id devalpha`  
 ### 🟠 Output of `sudo -l -U devadmin`
 
--
+---
 
 | 📌 **Phase 2: Directory and Permission Configuration**  |
 |----------------------------------------------------------|
@@ -37,6 +37,7 @@
 ### 🟠 Output of `ls -lR /opt/devweb`  
 ### 🟠 Commands used for `chmod` and `chgrp`
 
+---
 
 | 📌 **Phase 3: Apache Installation and Configuration**  |
 |---------------------------------------------------------|
@@ -53,6 +54,7 @@
 ### 🟠 Output of `ls -Z /opt/devweb/html` with SELinux contexts  
 ### 🟠 Output of `firewall-cmd --list-all`
 
+---
 
 | 📌 **Phase 4: Scheduled Maintenance and Backup Automation**  |
 |--------------------------------------------------------------|
@@ -67,6 +69,7 @@
 ### 🟠 Contents of `backup.sh` script  
 ### 🟠 Output of `atq`
 
+---
 
 | 📌 **Phase 5: Networking Configuration**  |
 |------------------------------------------|
@@ -81,6 +84,7 @@
 ### 🟠 Contents of `/etc/hosts`  
 ### 🟠 Contents of `/etc/resolv.conf`
 
+---
 
 | 📌 **Phase 6: Archiving and Logs**  |
 |------------------------------------|
@@ -94,6 +98,7 @@
 ### 🟠 Cron job configuration  
 ### 🟠 `find` command used for cleanup
 
+---
 
 | 📌 **Phase 7: SELinux and Service Management**  |
 |-------------------------------------------------|
@@ -108,6 +113,7 @@
 ### 🟠 Output of `semanage fcontext` rule  
 ### 🟠 Output of `restorecon -Rv /opt/devweb/html`
 
+---
 
 | 📌 **Phase 8: Troubleshooting and Logs**  |
 |------------------------------------------|
@@ -122,6 +128,7 @@
 ### 🟠 Output showing use of `top`, `ps`, and `kill`  
 ### 🟠 Recovery steps and resolutions
 
+---
 
 ## 🛠️ Technologies Used
 
