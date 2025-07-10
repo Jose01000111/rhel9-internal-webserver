@@ -1,8 +1,9 @@
 # 🚀 Deploying and Managing a Departmental Web Server on RHEL 9
 
-👨‍💻 **Role**: Junior System Administrator  
-🏢 **Company**: DevCore Solutions  
-📦 **Environment**: Red Hat Enterprise Linux 9
+## 👨‍💻 **Role**: Junior System Administrator  
+## 🏢 **Company**: DevCore Solutions  
+## 📦 **Environment**: Red Hat Enterprise Linux 9
+
 ## 🧾 Introduction
 
 As a junior system administrator at **DevCore Solutions**, I have been tasked with designing, deploying, and managing a secure internal web server environment using **Red Hat Enterprise Linux 9 (RHEL 9)**. This project simulates real-world sysadmin responsibilities by walking through critical phases such as system setup, user and group management, web server configuration, security enforcement with SELinux, task automation, log handling, and network configuration.
