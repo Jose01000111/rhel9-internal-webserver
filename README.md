@@ -20,7 +20,9 @@
 
 # 📸 **Deliverables**:  
 ### 🟠 Screenshot of `/etc/passwd`  
+
 ### 🟠 Output of `id devalpha`  
+
 ### 🟠 Output of `sudo -l -U devadmin`
 
 ---
