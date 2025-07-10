@@ -1,9 +1,7 @@
 # 🚀 Deploying and Managing a Departmental Web Server on RHEL 9
 
 > 👨‍💻 **Role**: Junior System Administrator  
-> 
 > 🏢 **Company**: DevCore Solutions  
-> 
 > 📦 **Environment**: Red Hat Enterprise Linux 9 
 
 ## 🧾 Introduction
