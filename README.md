@@ -16,9 +16,9 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I give devadmin sudo access.
 
 # 📸 **Deliverables**:  
-🟠 Screenshot of `/etc/passwd`  
-🟠 Output of `id devalpha`  
-🟠 Output of `sudo -l -U devadmin`
+### 🟠 Screenshot of `/etc/passwd`  
+### 🟠 Output of `id devalpha`  
+### 🟠 Output of `sudo -l -U devadmin`
 
 
 | 📌 **Phase 2: Directory and Permission Configuration**  |
@@ -30,8 +30,8 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I set the SGID bit on the `scripts` directory so new files inherit the group.
 
 # 📸 **Deliverables**:  
-🟠 Output of `ls -lR /opt/devweb`  
-🟠 Commands used for `chmod` and `chgrp`
+### 🟠 Output of `ls -lR /opt/devweb`  
+### 🟠 Commands used for `chmod` and `chgrp`
 
 
 | 📌 **Phase 3: Apache Installation and Configuration**  |
@@ -45,9 +45,9 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I open port 80 in the firewall.
 
 # 📸 **Deliverables**:  
-🟠 Snippet of updated `httpd.conf` showing the new DocumentRoot  
-🟠 Output of `ls -Z /opt/devweb/html` with SELinux contexts  
-🟠 Output of `firewall-cmd --list-all`
+### 🟠 Snippet of updated `httpd.conf` showing the new DocumentRoot  
+### 🟠 Output of `ls -Z /opt/devweb/html` with SELinux contexts  
+### 🟠 Output of `firewall-cmd --list-all`
 
 
 | 📌 **Phase 4: Scheduled Maintenance and Backup Automation**  |
@@ -59,9 +59,9 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I schedule a reboot to occur in 10 minutes using an at job.
 
 # 📸 **Deliverables**:  
-🟠 Output of `crontab -l -u devadmin`  
-🟠 Contents of `backup.sh` script  
-🟠 Output of `atq`
+### 🟠 Output of `crontab -l -u devadmin`  
+### 🟠 Contents of `backup.sh` script  
+### 🟠 Output of `atq`
 
 
 | 📌 **Phase 5: Networking Configuration**  |
@@ -72,10 +72,10 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I verify network connectivity and web service availability.
 
 # 📸 **Deliverables**:  
-🟠 Output of `ip a`  
-🟠 Output of `nmcli con show`  
-🟠 Contents of `/etc/hosts`  
-🟠 Contents of `/etc/resolv.conf`
+### 🟠 Output of `ip a`  
+### 🟠 Output of `nmcli con show`  
+### 🟠 Contents of `/etc/hosts`  
+### 🟠 Contents of `/etc/resolv.conf`
 
 
 | 📌 **Phase 6: Archiving and Logs**  |
@@ -86,9 +86,9 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I schedule a monthly cleanup to delete logs older than 30 days.
 
 # 📸 **Deliverables**:  
-🟠 Output of `tar -tzf /tmp/devlogs.tar.gz`  
-🟠 Cron job configuration  
-🟠 `find` command used for cleanup
+### 🟠 Output of `tar -tzf /tmp/devlogs.tar.gz`  
+### 🟠 Cron job configuration  
+### 🟠 `find` command used for cleanup
 
 
 | 📌 **Phase 7: SELinux and Service Management**  |
@@ -100,9 +100,9 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I restart Apache and enable it to start on boot.
 
 # 📸 **Deliverables**:  
-🟠 Output of `getenforce`  
-🟠 Output of `semanage fcontext` rule  
-🟠 Output of `restorecon -Rv /opt/devweb/html`
+### 🟠 Output of `getenforce`  
+### 🟠 Output of `semanage fcontext` rule  
+### 🟠 Output of `restorecon -Rv /opt/devweb/html`
 
 
 | 📌 **Phase 8: Troubleshooting and Logs**  |
@@ -114,9 +114,9 @@ As a junior system administrator at **DevCore Solutions**, I have been tasked wi
 ### 🛠️ I use system tools to find and kill any stuck processes.
 
 # 📸 **Deliverables**:  
-🟠 Screenshot or logs of the Apache error  
-🟠 Output showing use of `top`, `ps`, and `kill`  
-🟠 Recovery steps and resolutions
+### 🟠 Screenshot or logs of the Apache error  
+### 🟠 Output showing use of `top`, `ps`, and `kill`  
+### 🟠 Recovery steps and resolutions
 
 
 ## 🛠️ Technologies Used
