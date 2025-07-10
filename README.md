@@ -23,6 +23,7 @@
 ### 🟠 Output of `id devalpha`  
 ### 🟠 Output of `sudo -l -U devadmin`
 
+----
 
 | 📌 **Phase 2: Directory and Permission Configuration**  |
 |----------------------------------------------------------|
