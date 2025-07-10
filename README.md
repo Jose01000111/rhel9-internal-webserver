@@ -19,11 +19,14 @@
 ### 🛠️ I give devadmin sudo access.
 
 # 📸 **Deliverables**:  
-### 🟠 Screenshot of `/etc/passwd`  
+### 🟠 Screenshot of `/etc/passwd` 
+✅ Shows that the users exist
 
 ### 🟠 Output of `id devalpha`  
+✅ Verifies that devalpha is in the developers group
 
 ### 🟠 Output of `sudo -l -U devadmin`
+✅ Confirms devadmin has sudo privileges
 
 ---
 
@@ -37,7 +40,10 @@
 
 # 📸 **Deliverables**:  
 ### 🟠 Output of `ls -lR /opt/devweb`  
+✅ Shows directory structure, group ownership, SGID
+
 ### 🟠 Commands used for `chmod` and `chgrp`
+✅ Proof that permissions and group ownership were applied
 
 ---
 
@@ -53,8 +59,13 @@
 
 # 📸 **Deliverables**:  
 ### 🟠 Snippet of updated `httpd.conf` showing the new DocumentRoot  
+✅ Show the DocumentRoot now points to /opt/devweb/html
+
 ### 🟠 Output of `ls -Z /opt/devweb/html` with SELinux contexts  
+✅ Shows correct SELinux label (httpd_sys_content_t)
+
 ### 🟠 Output of `firewall-cmd --list-all`
+✅ Shows that port 80 is open
 
 ---
 
@@ -68,8 +79,13 @@
 
 # 📸 **Deliverables**:  
 ### 🟠 Output of `crontab -l -u devadmin`  
-### 🟠 Contents of `backup.sh` script  
+✅ Shows script content
+
+### 🟠 Contents of `backup.sh` script 
+✅ Confirms cron is scheduled
+
 ### 🟠 Output of `atq`
+✅ Shows scheduled reboot
 
 ---
 
@@ -82,9 +98,16 @@
 
 # 📸 **Deliverables**:  
 ### 🟠 Output of `ip a`  
+✅ Shows IP 192.168.1.100 on eth0
+
 ### 🟠 Output of `nmcli con show`  
+✅ Shows static IP and DNS settings
+
 ### 🟠 Contents of `/etc/hosts`  
+✅ Shows correct hostname/IP mapping
+
 ### 🟠 Contents of `/etc/resolv.conf`
+✅ Shows 8.8.8.8 as DNS
 
 ---
 
@@ -97,8 +120,13 @@
 
 # 📸 **Deliverables**:  
 ### 🟠 Output of `tar -tzf /tmp/devlogs.tar.gz`  
-### 🟠 Cron job configuration  
+✅ Shows contents of archive
+
+### 🟠 Cron job configuration 
+✅ Shows cleanup cron job
+
 ### 🟠 `find` command used for cleanup
+✅ Shows correct cleanup command
 
 ---
 
@@ -112,8 +140,13 @@
 
 # 📸 **Deliverables**:  
 ### 🟠 Output of `getenforce`  
+✅ Shows mode is Enforcing
+
 ### 🟠 Output of `semanage fcontext` rule  
+✅ Shows new SELinux rule
+
 ### 🟠 Output of `restorecon -Rv /opt/devweb/html`
+✅ Shows relabeling of directory
 
 ---
 
@@ -127,8 +160,13 @@
 
 # 📸 **Deliverables**:  
 ### 🟠 Screenshot or logs of the Apache error  
+✅ Output from journalctl -xe showing the Apache failure
+
 ### 🟠 Output showing use of `top`, `ps`, and `kill`  
+✅ Demonstrate using top, ps aux | grep httpd, and sudo kill -9 1
+
 ### 🟠 Recovery steps and resolutions
+✅ Contents of /var/log/httpd/error_log showing detailed Apache error logs
 
 ---
 
