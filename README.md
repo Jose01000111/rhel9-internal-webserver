@@ -35,11 +35,15 @@
 
 ✅ Shows that the users exist
 
+---
+
 ### 🟠 Output of `id devalpha`  
 
 ![bGNDjvL](https://github.com/user-attachments/assets/d3393fa9-4bde-48a1-aa3d-9d6d6cc30a4d)
 
 ✅ Verifies that devalpha is in the developers group
+
+---
 
 ### 🟠 Output of `sudo -l -U devadmin`
 
@@ -67,6 +71,8 @@
 ![CJdn3oI](https://github.com/user-attachments/assets/d9d16c78-0370-4e83-81a7-2715dceb7381)
 
 ✅ Shows directory structure, group ownership, SGID
+
+---
 
 ### 🟠 Commands used for `chmod` and `chgrp`
 
@@ -109,11 +115,15 @@
 
 ✅ Show the DocumentRoot now points to /opt/devweb/html
 
+---
+
 ### 🟠 Output of `ls -Z /opt/devweb/html` with SELinux contexts  
 
 ![mfnzzAG](https://github.com/user-attachments/assets/908ea5d2-6244-48d3-8bdd-f191dfcef652)
 
 ✅ Shows correct SELinux label (httpd_sys_content_t)
+
+---
 
 ### 🟠 Output of `firewall-cmd --list-all`
 
@@ -144,14 +154,17 @@
 
 ![hrc66Np](https://github.com/user-attachments/assets/7658229a-7dbb-4daa-ae7f-e7d3952d1140)
 
-
 ✅ Shows script content
+
+---
 
 ### 🟠 Contents of `backup.sh` script 
 
 ![9fbD7CQ](https://github.com/user-attachments/assets/7cf2d53e-cbee-4d32-ad70-a0b528c8c8fd)
 
 ✅ Confirms cron is scheduled
+
+---
 
 ### 🟠 Output of `atq`
 
@@ -180,17 +193,23 @@
 
 ✅ Shows IP 192.168.1.100 on eth0
 
+---
+
 ### 🟠 Output of `nmcli con show` 
 
 ![eB9ZOVV](https://github.com/user-attachments/assets/2039df18-0e10-4631-abaf-f8aae838c84e)
 
 ✅ Shows static IP and DNS settings
 
+---
+
 ### 🟠 Contents of `/etc/hosts`  
 
 ![DlGah4Q](https://github.com/user-attachments/assets/1b3e886b-ad2f-4c81-b53d-93c5c47afed0)
 
 ✅ Shows correct hostname/IP mapping
+
+---
 
 ### 🟠 Contents of `/etc/resolv.conf`
 
@@ -219,11 +238,15 @@
 
 ✅ Shows contents of archive
 
+---
+
 ### 🟠 Cron job configuration 
 
 ![mVpJDrK](https://github.com/user-attachments/assets/ae781c9a-779b-43c7-8880-1fba40550ec9)
 
 ✅ Shows cleanup cron job
+
+---
 
 ### 🟠 `find` command used for cleanup
 
@@ -248,11 +271,15 @@
 
 ✅ Shows mode is Enforcing
 
+---
+
 ### 🟠 Output of `semanage fcontext` rule  
 
 ![EoNpX2l](https://github.com/user-attachments/assets/076e97b8-005f-4224-8cf9-25a59c62aa40)
 
 ✅ Shows new SELinux rule
+
+---
 
 ![9h4UNHk](https://github.com/user-attachments/assets/3a2dcdcd-f9fe-417c-9c4b-fdfa7645b952)
 
@@ -287,6 +314,8 @@
 
 ✅ Output from journalctl -xe showing the Apache failure
 
+---
+
 ### 🟠 Output showing use of `top`, `ps`, and `kill`  
 
 ![dnAHqVH](https://github.com/user-attachments/assets/2117fe82-34ca-41eb-901b-3b65940c04be)
@@ -296,6 +325,8 @@
 ![OQgm6TN](https://github.com/user-attachments/assets/0432e3c9-41fe-43e2-adae-218560ccfe79)
 
 ✅ Demonstrate using top, ps aux | grep httpd, and sudo kill -9 1
+
+---
 
 ### 🟠 Recovery steps and resolutions
 
